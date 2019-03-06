@@ -5,28 +5,36 @@
 
 public class List_inArraySlots {
 
-    // declare fields here
+    int[] refArray;
+    private int filledElements = 0;
 
     /**
       Construct an empty list with a small initial capacity.
      */
     public List_inArraySlots() {
+      refArray = new int[5];
     }
 
 
     /**
       @return the number of elements in this list
      */
-    // public int size() {
-    // }
 
+    public int size() {
+      return filledElements;
+    }
 
      /**
        @return a string representation of this list,
        in [a,b,c,] format
       */
-    // public String toString() {
-    // }
+    public String toString() {
+      String rep = "[";
+      for (int i = 0; i < filledElements; i++){
+        rep += refArray[i] + " , ";
+      }
+      return rep + "]";
+    }
 
 
     /**
@@ -34,21 +42,36 @@ public class List_inArraySlots {
 
       @return true, in keeping with conventions yet to be discussed
      */
-     // public boolean add( int value) {
-     // }
+     public boolean add( int value) {
+       System.out.println(refArray.length);
+       if (filledElements < refArray.length){
+         refArray[filledElements] = value;
+         filledElements++;
+         return true;
+       }else{
+         expand();
+         add(value);
+         return false;
+       }
+     }
 
 
     /**
       Double the capacity of the List_inArraySlots,
       preserving existing data
      */
-     // private void expand() {
-        // System.out.println( "expand... (for debugging)");
-           // /* S.O.P. rules for debugging:
-              // Working methods should be silent. But during
-              // development, the programmer must verify that
-              // this method is called when that is appropriate.
-              // So test using the println(), then comment it out.
-              // */
-     // }
+     private void expand() {
+        System.out.println( "expand... (for debugging)");
+           /* S.O.P. rules for debugging:
+              Working methods should be silent. But during
+              development, the programmer must verify that
+              this method is called when that is appropriate.
+              So test using the println(), then comment it out.
+              */
+        int[] newRefArray = new int[refArray.length * 2];
+        for (int i = 0; i < refArray.length; i++){
+          newRefArray[i] = refArray[i];
+        }
+        refArray = newRefArray;
+     }
 }
