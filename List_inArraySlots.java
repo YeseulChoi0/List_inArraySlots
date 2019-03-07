@@ -1,3 +1,5 @@
+//received help from Greg Zborovsky
+
 /**
   Implement a list of integer elements, including
   both data and operations.

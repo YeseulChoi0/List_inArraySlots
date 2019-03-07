@@ -1,3 +1,5 @@
+//received help from Greg Zborovsky
+
 /**
  Test list features.
  */
@@ -14,7 +16,7 @@ public class UserOfList {
 
         int i = 0;
         for( ; i < 5; i++ ) {
-            list.add( -i); // differs from index, but similar
+            list.add( -i); // differs from index, but similar   Why is it -i?
             System.out.println( "number of elements: " + list.size() );
         }
         System.out.println("initial population of " + list.size() + " elements:");
@@ -23,7 +25,7 @@ public class UserOfList {
         // Add enough elements that expansion is expected
         for( ; i < 15; i++ ) {
 
-            if( i == 10) System.out.println( "expansion expected");
+            if( i == 10) System.out.println( "expansion expected"); //Why i == 10?
 
             list.add( -i);
             System.out.println( "number of elements: " + list.size() );
