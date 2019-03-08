@@ -1,3 +1,5 @@
+//received help from Greg Zborovsky
+
 /**
   Implement a list of integer elements, including
   both data and operations.
@@ -5,14 +7,16 @@
 
 public class List_inArraySlots {
 
-    int[] refArray;
+    private int[] refArray;
     private int filledElements = 0;
+
+    private static final int INITIAL_CAPACITY = 5;
 
     /**
       Construct an empty list with a small initial capacity.
      */
     public List_inArraySlots() {
-      refArray = new int[5];
+      refArray = new int[INITIAL_CAPACITY];
     }
 
 
@@ -44,15 +48,12 @@ public class List_inArraySlots {
      */
      public boolean add( int value) {
        System.out.println(refArray.length);
-       if (filledElements < refArray.length){
+       if (filledElements == refArray.length){
+         expand();
+       }
          refArray[filledElements] = value;
          filledElements++;
          return true;
-       }else{
-         expand();
-         add(value);
-         return false;
-       }
      }
 
 
