@@ -3,7 +3,7 @@
   both data and operations.
  */
 
-public class List_inArraySlots {
+public class List_inArraySlotsv1 {
 
     private int[] elements;     // container for the elements of the list
     private int filledElements; // the number of elements in this list
@@ -13,7 +13,7 @@ public class List_inArraySlots {
     /**
       Construct an empty list with a small initial capacity.
      */
-    public List_inArraySlots() {
+    public List_inArraySlotsv1() {
         elements = new int[ INITIAL_CAPACITY];
         // filledElements has been initialized to the desired value, 0
     }
@@ -81,8 +81,10 @@ public class List_inArraySlots {
        you should NOT complicate your code to check
        whether user violated the condition.)
  */
-public int get( int index ) {
-}
+
+// public int get( int index ) {
+//
+// }
 
 
 /**
@@ -92,6 +94,9 @@ public int get( int index ) {
   @precondition: @index is within the bounds of this list.
  */
 public int set( int index, int newValue ) {
+  int currentValue = elements[index];
+  elements[index] = newValue;
+  return currentValue;
 }
 
 
@@ -103,6 +108,12 @@ public int set( int index, int newValue ) {
   @return the value that was removed from the list
  */
  public int remove( int index) {
+   int removed = elements[index];
+   for (int i = index; i < filledElements; i++){
+     elements[i] = elements[i+1];
+   }
+   filledElements -= 1;
+   return removed;
  }
 
 
@@ -113,6 +124,7 @@ public int set( int index, int newValue ) {
   and any subsequent elements to the right
   (that is, increase the index associated with each).
  */
- public void add( int index, int value) {
- }
+ // public void add( int index, int value) {
+ //
+ // }
 }
