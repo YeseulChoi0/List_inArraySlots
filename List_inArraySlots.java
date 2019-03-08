@@ -48,15 +48,12 @@ public class List_inArraySlots {
      */
      public boolean add( int value) {
        System.out.println(refArray.length);
-       if (filledElements < refArray.length){
+       if (filledElements == refArray.length){
+         expand();
+       }
          refArray[filledElements] = value;
          filledElements++;
          return true;
-       }else{
-         expand();
-         add(value);
-         return false;
-       }
      }
 
 
