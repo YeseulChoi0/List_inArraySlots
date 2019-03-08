@@ -7,14 +7,16 @@
 
 public class List_inArraySlots {
 
-    int[] refArray;
+    private int[] refArray;
     private int filledElements = 0;
+
+    private static final int INITIAL_CAPACITY = 5;
 
     /**
       Construct an empty list with a small initial capacity.
      */
     public List_inArraySlots() {
-      refArray = new int[5];
+      refArray = new int[INITIAL_CAPACITY];
     }
 
 
