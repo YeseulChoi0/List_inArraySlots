@@ -82,9 +82,9 @@ public class List_inArraySlotsv1 {
        whether user violated the condition.)
  */
 
-// public int get( int index ) {
-//
-// }
+public int get( int index ) {
+  return elements[index];
+}
 
 
 /**
@@ -124,7 +124,10 @@ public int set( int index, int newValue ) {
   and any subsequent elements to the right
   (that is, increase the index associated with each).
  */
- // public void add( int index, int value) {
- //
- // }
+ public void add( int index, int value) {
+     add( index + 1, elements[index]);
+     //for (int i = index; i < elements.length; i++)
+     remove(index);
+     set (index, value);
+ }
 }
